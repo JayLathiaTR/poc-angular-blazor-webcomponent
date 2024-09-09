@@ -1,0 +1,132 @@
+﻿﻿@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.JSInterop
+
+@* @page "/commentbox" *@
+
+<style>
+    .card {
+        border: 1px solid #AFAFAF;
+    }
+
+    .comments-section {
+        padding-left: 20px;
+    }
+
+    .comment-details {
+        color: #000;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 19px 0 16px 0;
+    }
+
+    .comment-box-container {
+        background: #F4F5F7;
+        padding: 20px;
+        border: 1px solid #AFAFAF;
+    }
+    
+    .comment-box-container textarea {
+        width: 100%;
+        display: block;
+        padding: 15px;
+        border: 1px solid #666;
+        border-radius: 1px;
+        margin-bottom: 10px;
+    }
+
+    .comment-list {
+        border-top: 0;
+        padding: 20px;
+    }
+
+    .client-info {
+        color: #404040;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .comment-section:not(:last-child) {
+        padding-bottom: 10px;
+    }
+
+    .comment {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 24px;
+    }
+</style>
+
+<div class="comments-section">
+    <div class="comment-details">If necessary, enter a comment for the requester about this request.</div>
+    <div class="card">
+        <div class="comment-box-container">
+            <textarea class="form-control" @bind="newComment" @bind:event="oninput" rows="2" placeholder="Enter a comment.."></textarea>
+            <input type="button"
+                   class="btn btn-primary mt-3"
+                   disabled="@string.IsNullOrWhiteSpace(newComment)"
+                   value="Send comment"
+                   @onclick="SubmitComment" />
+        </div>
+    </div>
+
+    @if (comments.Count > 0)
+    {
+        <div class="card comment-list">
+            @foreach (var comment in comments)
+            {
+                <div class="comment-section" @key="comment">
+                    <div class="client-info">@comment.UserName | @comment.CreatedDate</div>
+                    <div class="comment">@comment.Text</div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private string newComment = string.Empty;
+    private List<CommentItem> comments = new List<CommentItem>();
+
+    [Inject]
+    private IJSRuntime JS { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Register the .NET object reference
+        var dotNetObjectRef = DotNetObjectReference.Create(this);
+        await JS.InvokeVoidAsync("registerBlazorComponent", dotNetObjectRef);
+    }
+
+    private async Task SubmitComment()
+    {
+        if (!string.IsNullOrEmpty(newComment))
+        {
+            var comment = new CommentItem
+                {
+                    Text = newComment,
+                    CreatedDate = DateTime.Now.ToString("MMM d, yyyy, h:mm:ss tt"),
+                    // The Username will be set by Angular
+                };
+
+            // Call the JavaScript function to handle the save action in Angular
+            await JS.InvokeVoidAsync("saveComment", comment);
+            newComment = string.Empty;
+        }
+    }
+
+    [JSInvokable]
+    //public void FetchComments(List<CommentItem> serverComments)
+    public Task<string> FetchComments(List<CommentItem> serverComments)
+    {
+        comments = serverComments.OrderByDescending(c => DateTime.Parse(c.CreatedDate)).ToList();
+        StateHasChanged();
+        return Task.FromResult("Comments displayed successfully");
+    }
+
+    public class CommentItem
+    {
+        public string Text { get; set; }
+        public string CreatedDate { get; set; }
+        public string UserName { get; set; }
+    }
+}
