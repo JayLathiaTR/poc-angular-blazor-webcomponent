@@ -1,2 +1,2 @@
-# poc-angular-blazor-webcomponent
+# [POC] ANGULAR with BLAZOR WEB-COMPONENTS
 This repository showcases the integration of a BlazorWebAssembly Library project used as a Web-Component in the Angular App
