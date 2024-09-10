@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { CommentEventDetail } from './events-config/event-models';
 import { APP_EVENT_NAMES } from './events-config/angular-events';
 
@@ -10,7 +8,7 @@ import { APP_EVENT_NAMES } from './events-config/angular-events';
 export class BlazorService {
   private blazorComponent: any;
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   registerBlazorComponent(dotNetObjectRef: any): void {
     this.blazorComponent = dotNetObjectRef;
@@ -34,15 +32,5 @@ export class BlazorService {
       console.log('CustomEvent for Comment: ', event);
       window.dispatchEvent(event);
     };
-  }
-
-  addCommentToBackend(comment: CommentEventDetail): Observable<CommentEventDetail> {
-    const url = 'https://blazor-angular.free.beeceptor.com/saveComment';
-    return this.http.post<CommentEventDetail>(url, comment);
-  }
-
-  fetchCommentsFromBackend(): Observable<CommentEventDetail[]> {
-    const url = 'https://blazor-angular.free.beeceptor.com/getComments';
-    return this.http.get<CommentEventDetail[]>(url);
   }
 }

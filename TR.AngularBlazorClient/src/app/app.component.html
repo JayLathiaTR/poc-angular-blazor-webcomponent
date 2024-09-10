@@ -1,7 +1,34 @@
 <div class="sticky-header">
   <h1>Welcome to Angular Blazor Web Component</h1>
-  <hr class="header-divider">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">
+        <img src="assets/favicon.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+        Blazegular Home
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/comment">
+              <i class="bi bi-chat-dots"></i> CommentBox
+            </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/weather">
+              <i class="bi bi-cloud-sun"></i> Weather
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </div>
-<h3 style="padding-top: 20px;">Blazor Comment box component</h3>
-<hr class="header-divider">
-<commentbox-component></commentbox-component>
+<div class="container mt-4">
+  <h1>Navigate to different Blazor components</h1>
+  <p>Use the navigation bar above to switch between different components.</p>
+  <router-outlet></router-outlet>
+</div>
