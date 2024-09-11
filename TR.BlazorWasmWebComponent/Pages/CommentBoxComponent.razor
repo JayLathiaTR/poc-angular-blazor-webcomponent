@@ -90,7 +90,7 @@
     {
         // Register the .NET object reference
         var dotNetObjectRef = DotNetObjectReference.Create(this);
-        await JS.InvokeVoidAsync("registerBlazorComponent", dotNetObjectRef);
+        await JS.InvokeVoidAsync("registerBlazorComponent", "CommentBoxComponent", dotNetObjectRef);
     }
 
     private async Task SubmitComment()

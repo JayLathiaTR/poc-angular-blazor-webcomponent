@@ -1,35 +1,36 @@
 import { Injectable } from '@angular/core';
 import { CommentEventDetail } from './events-config/event-models';
-import { APP_EVENT_NAMES } from './events-config/angular-events';
+import { APP_EVENT_NAMES } from './events-config/webassembly-events';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlazorService {
-  private blazorComponent: any;
+  private blazorComponents: { [key: string]: any } = {};
 
   constructor() { }
 
-  registerBlazorComponent(dotNetObjectRef: any): void {
-    this.blazorComponent = dotNetObjectRef;
+  registerBlazorComponent(componentName: string, dotNetObjectRef: any): void {
+    this.blazorComponents[componentName] = dotNetObjectRef;
+    console.log(`Blazor component: ${componentName} is registered`, dotNetObjectRef);
   }
 
-  async invokeBlazorMethodAsync(methodName: string, ...args: any[]): Promise<any> {
-    if (!this.blazorComponent) {
-      throw new Error('Blazor component is not registered.');
+  async invokeBlazorMethodAsync(componentName: string, methodName: string, ...args: any[]): Promise<any> {
+    const component = this.blazorComponents[componentName];
+    if (!component) {
+      throw new Error(`Blazor component: ${componentName} is not registered.`);
     }
-    console.log('Invoking Blazor Method:', methodName, args);
-    return await this.blazorComponent.invokeMethodAsync(methodName, ...args);
+    console.log(`Invoking Blazor Method: ${methodName} on ${componentName} with args`, args);
+    return await component.invokeMethodAsync(methodName, ...args);
   }
 
   initializeGlobalMethods(): void {
-    window.registerBlazorComponent = (dotNetObjectRef: any) => {
-      this.registerBlazorComponent(dotNetObjectRef);
+    window.registerBlazorComponent = (componentName: string, dotNetObjectRef: any) => {
+      this.registerBlazorComponent(componentName, dotNetObjectRef);
     };
 
     window.saveComment = (comment: CommentEventDetail) => {
       const event = new CustomEvent<CommentEventDetail>(APP_EVENT_NAMES.COMMENT_SUBMITTED, { detail: comment });
-      console.log('CustomEvent for Comment: ', event);
       window.dispatchEvent(event);
     };
   }

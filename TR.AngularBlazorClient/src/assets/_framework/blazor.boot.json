@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TR.BlazorWasmWebComponent",
   "resources": {
-    "hash": "sha256-HBStJMoPeGbwyN4LtOpsMreZP72DLbUJ6od/FI2+8Y4=",
+    "hash": "sha256-ylD+z3TkWZSOWuht7gYoc+oiHC3FbUo0jup5maAPi4s=",
     "jsModuleNative": {
       "dotnet.native.8.0.8.dapwtwupbk.js": "sha256-juC5sA7gHTLXFEhAKgdM2/RavswpwCtDfjYGsAz2FXg="
     },
@@ -45,7 +45,7 @@
       "System.Text.Encodings.Web.wasm": "sha256-MCv+5sGwYGikJ8D76raGF6L+02exyJcFgx2sVlUjmKk=",
       "System.Text.Json.wasm": "sha256-ssKxhpQUttYzKmcz3x97MWVU7Ih+A1pW08TZ1VU+HOk=",
       "System.Text.RegularExpressions.wasm": "sha256-8bujMNUMCuxn48zxE7AA6YYcbZJjv76LHEAtNjS6TuE=",
-      "TR.BlazorWasmWebComponent.wasm": "sha256-pGnLG3r/qh/C6IjSpKKAxH387vyFULwHpmp67Cg9fR8="
+      "TR.BlazorWasmWebComponent.wasm": "sha256-GZUIo4vjoPs5zBbWXnmfNpicWTcvAQP3Tfj0Y01J/UM="
     },
     "libraryInitializers": {
       "_content/Microsoft.AspNetCore.Components.CustomElements/Microsoft.AspNetCore.Components.CustomElements.lib.module.js": "sha256-wVE+oeSzTDXPHNmgbAGdEELwiM9BRtnzKONGp++HGB0="

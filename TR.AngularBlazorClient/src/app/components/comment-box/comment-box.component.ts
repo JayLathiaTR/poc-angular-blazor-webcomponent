@@ -1,6 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { BlazorService } from '../../blazor.service';
-import { APP_EVENT_NAMES, WASM_METHOD_NAMES } from '../../events-config/angular-events';
+import { APP_EVENT_NAMES, BLAZOR_COMPONENT_NAMES, WASM_METHOD_NAMES } from '../../events-config/webassembly-events';
 import { CommentEventDetail } from '../../events-config/event-models';
 import { BackendService } from '../../services/backend.service';
 
@@ -47,7 +47,7 @@ export class CommentBoxComponent implements OnInit {
     this.backendSvc.fetchCommentsFromBackend().subscribe({
       next: (comments) => {
         console.log('Fetched comments from server:', comments);
-        this.blazorSvc.invokeBlazorMethodAsync(WASM_METHOD_NAMES.FETCH_COMMENTS, comments).then(result => {
+        this.blazorSvc.invokeBlazorMethodAsync(BLAZOR_COMPONENT_NAMES.COMMENT_BOX_COMPONENT, WASM_METHOD_NAMES.FETCH_COMMENTS, comments).then(result => {
           console.log('Blazor component response:', result);
         }).catch(error => {
           console.error('Error from Blazor component with display comments:', error);
