@@ -35,8 +35,8 @@ This repository showcases the integration of a BlazorWebAssembly Library project
 * ![image](https://github.com/user-attachments/assets/39aa6b66-af1d-4f2c-8d60-f630c99230bd)
 * Run these commands
   * **<code>ng build</code>**
-  * **<code>node server.js</code>**
-* Your app will be listening to port [localhost:4205](http://localhost:4205/), so open the browser for this port
+  * **<code>ng serve -o</code>**
+* Your app will be listening to port [localhost:4200](http://localhost:4200/), so open the browser for this port
 * ![image](https://github.com/user-attachments/assets/bbe178dc-4f70-4c57-a937-5a5d9344b289)
 * You can navigate to your route to see your Blazor component in action
 * ![image](https://github.com/user-attachments/assets/45f2a246-cb11-429b-903b-19109e0295e6)
