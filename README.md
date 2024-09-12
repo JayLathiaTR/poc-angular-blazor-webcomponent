@@ -23,7 +23,7 @@ This repository showcases the integration of a BlazorWebAssembly Library project
 * The Publish window will be opened, where you need to click on the **Publish** button.
 * After the publish is completed, which you can track in the output window, go to the puslished location
 * ![image](https://github.com/user-attachments/assets/55f4b75b-051d-45ec-a336-f9aef987547e)
-* Go to the wwwroot directory and copy 3 folders "**_content**", "**_framework**" and "**css**"
+* Go to the wwwroot directory and copy 2 folders "**<code>_content</code>**" and "**<code>_framework</code>**"
 
 # Integrate Angular App with Blazor published components
 * Navigate to the **src/assets** directory of the **TR.AngularBlazorClient** project and paste the above Blazor published folders
