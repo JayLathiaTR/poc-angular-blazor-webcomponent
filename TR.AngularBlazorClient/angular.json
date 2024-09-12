@@ -26,10 +26,17 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/advanceflow.ico",
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets/_framework",
+                "output": "_framework"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets/_content",
+                "output": "_content"
               }
             ],
             "styles": [
@@ -37,8 +44,7 @@
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.scss"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
