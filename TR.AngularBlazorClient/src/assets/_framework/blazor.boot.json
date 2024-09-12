@@ -48,10 +48,10 @@
       "TR.BlazorWasmWebComponent.wasm": "sha256-GZUIo4vjoPs5zBbWXnmfNpicWTcvAQP3Tfj0Y01J/UM="
     },
     "libraryInitializers": {
-      "_content/Microsoft.AspNetCore.Components.CustomElements/Microsoft.AspNetCore.Components.CustomElements.lib.module.js": "sha256-wVE+oeSzTDXPHNmgbAGdEELwiM9BRtnzKONGp++HGB0="
+      "_framework/Microsoft.AspNetCore.Components.CustomElements.lib.module.js": "sha256-wVE+oeSzTDXPHNmgbAGdEELwiM9BRtnzKONGp++HGB0="
     },
     "modulesAfterRuntimeReady": {
-      "../_content/Microsoft.AspNetCore.Components.CustomElements/Microsoft.AspNetCore.Components.CustomElements.lib.module.js": "sha256-wVE+oeSzTDXPHNmgbAGdEELwiM9BRtnzKONGp++HGB0="
+      "../_framework/Microsoft.AspNetCore.Components.CustomElements.lib.module.js": "sha256-wVE+oeSzTDXPHNmgbAGdEELwiM9BRtnzKONGp++HGB0="
     }
   },
   "cacheBootResources": true,
