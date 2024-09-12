@@ -23,7 +23,7 @@ This repository showcases the integration of a BlazorWebAssembly Library project
 * The Publish window will be opened, where you need to click on the **Publish** button.
 * After the publish is completed, which you can track in the output window, go to the puslished location
 * ![image](https://github.com/user-attachments/assets/55f4b75b-051d-45ec-a336-f9aef987547e)
-* Go to the wwwroot directory and copy 3 folders "**_content**", "**_framework**" and "**css**"
+* Go to the wwwroot directory and copy 2 folders "**<code>_content</code>**" and "**<code>_framework</code>**"
 
 # Integrate Angular App with Blazor published components
 * Navigate to the **src/assets** directory of the **TR.AngularBlazorClient** project and paste the above Blazor published folders
@@ -35,8 +35,9 @@ This repository showcases the integration of a BlazorWebAssembly Library project
 * ![image](https://github.com/user-attachments/assets/39aa6b66-af1d-4f2c-8d60-f630c99230bd)
 * Run these commands
   * **<code>ng build</code>**
-  * **<code>node server.js</code>**
-* Your app will be listening to port [localhost:4205](http://localhost:4205/), so open the browser for this port
-* ![image](https://github.com/user-attachments/assets/bbe178dc-4f70-4c57-a937-5a5d9344b289)
+  * **<code>ng serve -o</code>**
+* Your app will be listening to port [localhost:4200](http://localhost:4200/), so open the browser for this port
+* ![image](https://github.com/user-attachments/assets/3d124759-943b-4706-82e8-a544c03515a2)
 * You can navigate to your route to see your Blazor component in action
-* ![image](https://github.com/user-attachments/assets/45f2a246-cb11-429b-903b-19109e0295e6)
+* ![image](https://github.com/user-attachments/assets/5171a0f7-b797-43a8-a471-de087a270974)
+
