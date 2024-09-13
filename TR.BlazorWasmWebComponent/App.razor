@@ -1,4 +1,11 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿<Router AppAssembly="@typeof(Program).Assembly"
+    AdditionalAssemblies="new[]
+    {
+        typeof(CounterComponent).Assembly,
+        typeof(WeatherComponent).Assembly,
+        typeof(ChatboxComponent).Assembly,
+        typeof(CommentboxComponent).Assembly,
+    }">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />

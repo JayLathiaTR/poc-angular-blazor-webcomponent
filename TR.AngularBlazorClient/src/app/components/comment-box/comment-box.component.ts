@@ -1,8 +1,10 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { BlazorService } from '../../blazor.service';
-import { APP_EVENT_NAMES, BLAZOR_COMPONENT_NAMES, WASM_METHOD_NAMES } from '../../events-config/webassembly-events';
+import { BLAZOR_COMPONENT_NAMES, WASM_METHOD_NAMES } from '../../events-config/webassembly-events';
 import { CommentEventDetail } from '../../events-config/event-models';
 import { BackendService } from '../../services/backend.service';
+import { Subscription } from 'rxjs';
+import { EventHandlingService } from '../../services/event-handling.service';
 
 @Component({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -14,18 +16,27 @@ import { BackendService } from '../../services/backend.service';
 })
 export class CommentBoxComponent implements OnInit {
   comments: Array<{ text: string, dateTime: string }> = [];
+  private commentSubmittedSubscription: Subscription | undefined;
 
-  constructor(private blazorSvc: BlazorService,
-    private backendSvc: BackendService
+  constructor(
+    private blazorSvc: BlazorService,
+    private backendSvc: BackendService,
+    private eventHandlingService: EventHandlingService
   ) { }
 
   ngOnInit(): void {
-    window.addEventListener(APP_EVENT_NAMES.COMMENT_SUBMITTED, this.handleCommentSubmitted.bind(this) as EventListener);
+    this.commentSubmittedSubscription = this.eventHandlingService.commentSubmitted$.subscribe(
+      (comment: CommentEventDetail) => this.handleCommentSubmitted(comment)
+    );
   }
 
-  handleCommentSubmitted(event: Event) {
-    const customEvent = event as CustomEvent<CommentEventDetail>;
-    const comment = customEvent.detail;
+  ngOnDestroy(): void {
+    if (this.commentSubmittedSubscription) {
+      this.commentSubmittedSubscription.unsubscribe();
+    }
+  }
+
+  handleCommentSubmitted(comment: CommentEventDetail): void {
     comment.userName = 'Michael, Cole'; // dynamically set the UserName
     console.log('Saving comment to server:', comment);
 
@@ -37,13 +48,13 @@ export class CommentBoxComponent implements OnInit {
       error: (error) => {
         console.error('Error adding comment to server:', error);
       },
-      complete: () => { // <-- 'complete' method is optional and not required all the time
+      complete: () => {
         console.log('Any optional call to handle.');
       }
     });
   }
 
-  fetchAndUpdateComments() {
+  fetchAndUpdateComments(): void {
     this.backendSvc.fetchCommentsFromBackend().subscribe({
       next: (comments) => {
         console.log('Fetched comments from server:', comments);

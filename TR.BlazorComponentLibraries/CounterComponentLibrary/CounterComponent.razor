@@ -1,0 +1,23 @@
+﻿@page "/counter"
+
+<style>
+    .my-component {
+    border: 2px dashed black;
+    padding: 1em;
+    margin: 1em 0;
+}
+</style>
+
+<div class="my-component">
+    <p role="status">Current count: @currentCount</p>
+    <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+</div>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -10,6 +10,21 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.CustomElements" Version="8.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.8" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ChatboxComponentLibrary">
+      <HintPath>..\TR.BlazorComponentLibraries\ChatboxComponentLibrary\bin\Release\net8.0\ChatboxComponentLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="CommentboxComponentLibrary">
+      <HintPath>..\TR.BlazorComponentLibraries\CommentboxComponentLibrary\bin\Release\net8.0\CommentboxComponentLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="CounterComponentLibrary">
+      <HintPath>..\TR.BlazorComponentLibraries\CounterComponentLibrary\bin\Release\net8.0\CounterComponentLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="WeatherComponentLibrary">
+      <HintPath>..\TR.BlazorComponentLibraries\WeatherComponentLibrary\bin\Release\net8.0\WeatherComponentLibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

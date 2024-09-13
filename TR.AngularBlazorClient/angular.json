@@ -32,6 +32,11 @@
                 "glob": "**/*",
                 "input": "src/assets/_framework",
                 "output": "_framework"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets/_content",
+                "output": "_content"
               }
             ],
             "styles": [

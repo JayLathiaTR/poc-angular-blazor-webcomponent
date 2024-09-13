@@ -5,5 +5,6 @@ declare global {
     interface Window {
         registerBlazorComponent: (componentName: string, dotNetObjectRef: any) => void;
         saveComment: (comment: CommentEventDetail) => void;
+        saveChat: (comment: CommentEventDetail) => void;
     }
 }

@@ -1,7 +1,4 @@
-﻿﻿@using Microsoft.AspNetCore.Components.Web
-@* @inject HttpClient Http *@
-
-@* @page "/weather" *@
+﻿@page "/weather"
 
 <p>This component demonstrates the data in the tablular grid</p>
 
@@ -37,9 +34,8 @@ else
 @code {
     private WeatherForecast[]? forecasts;
 
-    protected override async Task OnInitializedAsync()
+    protected override Task OnInitializedAsync()
     {
-        //forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
         forecasts = new WeatherForecast[]
         {
             new WeatherForecast {Date = new DateOnly(2022, 01, 06), Summary = "Freezing", TemperatureC = 1},
@@ -48,6 +44,8 @@ else
             new WeatherForecast {Date = new DateOnly(2022, 01, 09), Summary = "Balmy", TemperatureC = -16},
             new WeatherForecast {Date = new DateOnly(2022, 01, 10), Summary = "Chilly", TemperatureC = -2},
         };
+
+        return Task.CompletedTask;
     }
 
     public class WeatherForecast

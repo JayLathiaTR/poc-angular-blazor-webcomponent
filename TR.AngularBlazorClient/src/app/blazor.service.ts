@@ -11,8 +11,12 @@ export class BlazorService {
   constructor() { }
 
   registerBlazorComponent(componentName: string, dotNetObjectRef: any): void {
-    this.blazorComponents[componentName] = dotNetObjectRef;
-    console.log(`Blazor component: ${componentName} is registered`, dotNetObjectRef);
+    if (!this.blazorComponents[componentName]) {
+      this.blazorComponents[componentName] = dotNetObjectRef;
+      console.log(`Blazor component: ${componentName} is registered`, dotNetObjectRef);
+    } else {
+      console.log(`Blazor component: ${componentName} is already registered`);
+    }
   }
 
   async invokeBlazorMethodAsync(componentName: string, methodName: string, ...args: any[]): Promise<any> {
@@ -31,6 +35,11 @@ export class BlazorService {
 
     window.saveComment = (comment: CommentEventDetail) => {
       const event = new CustomEvent<CommentEventDetail>(APP_EVENT_NAMES.COMMENT_SUBMITTED, { detail: comment });
+      window.dispatchEvent(event);
+    };
+
+    window.saveChat = (comment: CommentEventDetail) => {
+      const event = new CustomEvent<CommentEventDetail>(APP_EVENT_NAMES.CHAT_SUBMITTED, { detail: comment });
       window.dispatchEvent(event);
     };
   }

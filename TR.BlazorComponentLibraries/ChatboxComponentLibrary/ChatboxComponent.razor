@@ -1,7 +1,6 @@
-﻿﻿@using Microsoft.AspNetCore.Components.Web
-@using Microsoft.JSInterop
+﻿@using Microsoft.JSInterop
 
-@* @page "/commentbox" *@
+@page "/chatbox"
 
 <style>
     .card {
@@ -20,7 +19,7 @@
         padding: 20px;
         border: 1px solid #AFAFAF;
     }
-    
+
     .comment-box-container textarea {
         width: 100%;
         display: block;
@@ -56,12 +55,12 @@
     <div class="comment-details">If necessary, enter a comment for the requester about this request.</div>
     <div class="card">
         <div class="comment-box-container">
-            <textarea class="form-control" @bind="newComment" @bind:event="oninput" rows="2" placeholder="Enter a comment.."></textarea>
+            <textarea class="form-control" @bind="newComment" @bind:event="oninput" rows="2" placeholder="Enter a chat.."></textarea>
             <input type="button"
-                   class="btn btn-primary mt-3"
+                   class="btn btn-warning mt-3"
                    disabled="@string.IsNullOrWhiteSpace(newComment)"
-                   value="Send comment"
-                   @onclick="SubmitComment" />
+                   value="Send chat"
+                   @onclick="SubmitChat" />
         </div>
     </div>
     @if (comments.Count > 0)
@@ -78,7 +77,6 @@
     }
 </div>
 
-
 @code {
     private string newComment = string.Empty;
     private List<CommentItem> comments = new List<CommentItem>();
@@ -90,10 +88,10 @@
     {
         // Register the .NET object reference
         var dotNetObjectRef = DotNetObjectReference.Create(this);
-        await JS.InvokeVoidAsync("registerBlazorComponent", "CommentBoxComponent", dotNetObjectRef);
+        await JS.InvokeVoidAsync("registerBlazorComponent", "ChatboxComponent", dotNetObjectRef);
     }
 
-    private async Task SubmitComment()
+    private async Task SubmitChat()
     {
         if (!string.IsNullOrEmpty(newComment))
         {
@@ -105,18 +103,17 @@
                 };
 
             // Call the JavaScript function to handle the save action in Angular
-            await JS.InvokeVoidAsync("saveComment", comment);
+            await JS.InvokeVoidAsync("saveChat", comment);
             newComment = string.Empty;
         }
     }
 
     [JSInvokable]
-    //public void FetchComments(List<CommentItem> serverComments)
-    public Task<string> FetchComments(List<CommentItem> serverComments)
+    public Task<string> FetchChats(List<CommentItem> serverComments)
     {
         comments = serverComments.OrderByDescending(c => DateTime.Parse(c.CreatedDate)).ToList();
         StateHasChanged();
-        return Task.FromResult("Comments displayed successfully");
+        return Task.FromResult("Chats displayed successfully");
     }
 
     public class CommentItem
