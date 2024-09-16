@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnDestroy, OnInit } from '@angular/core';
 import { BlazorService } from '../../blazor.service';
 import { BackendService } from '../../services/backend.service';
 import { BLAZOR_COMPONENT_NAMES, WASM_METHOD_NAMES } from '../../events-config/webassembly-events';
@@ -14,7 +14,7 @@ import { EventHandlingService } from '../../services/event-handling.service';
   templateUrl: './chatbox.component.html',
   styleUrl: './chatbox.component.scss'
 })
-export class ChatboxComponent implements OnInit {
+export class ChatboxComponent implements OnInit, OnDestroy {
   comments: Array<{ text: string, dateTime: string }> = [];
   private chatSubmittedSubscription: Subscription | undefined;
 

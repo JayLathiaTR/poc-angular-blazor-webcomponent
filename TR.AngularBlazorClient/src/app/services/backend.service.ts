@@ -10,13 +10,13 @@ export class BackendService {
 
   constructor(private http: HttpClient) { }
 
-  addCommentToBackend(comment: CommentEventDetail): Observable<CommentEventDetail> {
-    const url = 'https://smart-energy.free.beeceptor.com/saveComment';
-    return this.http.post<CommentEventDetail>(url, comment);
+  fetchCommentsFromBackend(): Observable<CommentEventDetail[]> {
+    const url = 'https://hello-smart.free.beeceptor.com/getComments';
+    return this.http.get<CommentEventDetail[]>(url);
   }
 
-  fetchCommentsFromBackend(): Observable<CommentEventDetail[]> {
-    const url = 'https://smart-energy.free.beeceptor.com/getComments';
-    return this.http.get<CommentEventDetail[]>(url);
+  addCommentToBackend(comment: CommentEventDetail): Observable<CommentEventDetail> {
+    const url = 'https://hello-smart.free.beeceptor.com/saveComment';
+    return this.http.post<CommentEventDetail>(url, comment);
   }
 }

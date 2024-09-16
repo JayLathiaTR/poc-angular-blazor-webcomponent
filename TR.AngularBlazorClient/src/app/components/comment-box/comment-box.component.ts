@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnDestroy, OnInit } from '@angular/core';
 import { BlazorService } from '../../blazor.service';
 import { BLAZOR_COMPONENT_NAMES, WASM_METHOD_NAMES } from '../../events-config/webassembly-events';
 import { CommentEventDetail } from '../../events-config/event-models';
@@ -14,7 +14,7 @@ import { EventHandlingService } from '../../services/event-handling.service';
   templateUrl: './comment-box.component.html',
   styleUrl: './comment-box.component.scss'
 })
-export class CommentBoxComponent implements OnInit {
+export class CommentBoxComponent implements OnInit, OnDestroy {
   comments: Array<{ text: string, dateTime: string }> = [];
   private commentSubmittedSubscription: Subscription | undefined;
 

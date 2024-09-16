@@ -11,12 +11,8 @@ export class BlazorService {
   constructor() { }
 
   registerBlazorComponent(componentName: string, dotNetObjectRef: any): void {
-    if (!this.blazorComponents[componentName]) {
-      this.blazorComponents[componentName] = dotNetObjectRef;
-      console.log(`Blazor component: ${componentName} is registered`, dotNetObjectRef);
-    } else {
-      console.log(`Blazor component: ${componentName} is already registered`);
-    }
+    this.blazorComponents[componentName] = dotNetObjectRef;
+    console.log(`Blazor component: ${componentName} is registered`, dotNetObjectRef);
   }
 
   async invokeBlazorMethodAsync(componentName: string, methodName: string, ...args: any[]): Promise<any> {
