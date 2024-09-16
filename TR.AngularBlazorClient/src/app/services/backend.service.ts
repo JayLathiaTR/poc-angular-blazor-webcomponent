@@ -11,12 +11,12 @@ export class BackendService {
   constructor(private http: HttpClient) { }
 
   fetchCommentsFromBackend(): Observable<CommentEventDetail[]> {
-    const url = 'https://efficient.free.beeceptor.com/getComments';
+    const url = 'https://subsample.free.beeceptor.com/getComments';
     return this.http.get<CommentEventDetail[]>(url);
   }
 
   addCommentToBackend(comment: CommentEventDetail): Observable<CommentEventDetail> {
-    const url = 'https://efficient.free.beeceptor.com/saveComment';
+    const url = 'https://subsample.free.beeceptor.com/saveComment';
     return this.http.post<CommentEventDetail>(url, comment);
   }
 }

@@ -53,18 +53,38 @@
     .saf-progress-ring {
         margin-top: 20px;
     }
+
+    .comment-button {
+        margin-top: 5px;
+    }
 </style>
 
 <div>
     <div class="comment-details">If necessary, enter a comment for the requester about this request.</div>
     <div class="card">
         <div class="comment-box-container">
-            <textarea class="form-control" @bind="newComment" @bind:event="oninput" rows="2" placeholder="Enter a comment.."></textarea>
-            <input type="button"
+            <textarea class="form-control" @bind="newComment" @bind:event="oninput" rows="2"
+                placeholder="Enter a comment.."
+                maxlength="50">
+            </textarea>
+            @* <input type="button"
                    class="btn btn-success mt-3"
                    disabled="@string.IsNullOrWhiteSpace(newComment)"
                    value="Send comment"
-                   @onclick="SubmitComment" />
+                   @onclick="SubmitComment" /> *@
+            @* <saf-text-area id="comment-text-area"
+                           ngDefaultControl
+                           [(ngModel)]="newComment"
+                           name="request-comment-text-area"
+                           placeholder="Enter a comment.."
+                           maxlength="50">
+            </saf-text-area> *@
+            <saf-button class="comment-button" appearance="primary"
+                        @onclick="SubmitComment"
+                        disabled="@string.IsNullOrWhiteSpace(newComment)">
+                <saf-icon slot="start" icon-name="pen-line" appearance="light"></saf-icon>
+                Send comment
+            </saf-button>
         </div>
     </div>
     @if (isLoaderBusy)
