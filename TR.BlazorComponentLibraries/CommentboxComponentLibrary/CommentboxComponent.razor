@@ -49,6 +49,10 @@
         font-weight: bold;
         line-height: 24px;
     }
+
+    .saf-progress-ring {
+        margin-top: 20px;
+    }
 </style>
 
 <div>
@@ -63,21 +67,31 @@
                    @onclick="SubmitComment" />
         </div>
     </div>
-    @if (comments.Count > 0)
+    @if (isLoaderBusy)
     {
-        <div class="card comment-list">
-            @foreach (var comment in comments)
-            {
-                <div class="comment-section" @key="comment">
-                    <div class="client-info">@comment.UserName | @comment.CreatedDate</div>
-                    <div class="comment">@comment.Text</div>
-                </div>
-            }
-        </div>
+        <saf-progress-ring role="progressbar" id="ring"
+            label="Fetching comments..." aria-label="progress ring" class="saf-progress-ring">
+        </saf-progress-ring>
+    }
+    else
+    {
+        @if (comments.Count > 0)
+        {
+            <div class="card comment-list">
+                @foreach (var comment in comments)
+                {
+                    <div class="comment-section" @key="comment">
+                        <div class="client-info">@comment.UserName | @comment.CreatedDate</div>
+                        <div class="comment">@comment.Text</div>
+                    </div>
+                }
+            </div>
+        }
     }
 </div>
 
 @code {
+    private bool isLoaderBusy = true;
     private string newComment = string.Empty;
     private List<CommentItem> comments = new List<CommentItem>();
 
@@ -95,6 +109,8 @@
     {
         if (!string.IsNullOrEmpty(newComment))
         {
+            isLoaderBusy = true;
+            StateHasChanged();
             var comment = new CommentItem
                 {
                     Text = newComment,
@@ -112,6 +128,7 @@
     public Task<string> FetchComments(List<CommentItem> serverComments)
     {
         comments = serverComments.OrderByDescending(c => DateTime.Parse(c.CreatedDate)).ToList();
+        isLoaderBusy = false;
         StateHasChanged();
         return Task.FromResult("Comments displayed successfully");
     }

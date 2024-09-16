@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TR.BlazorWasmWebComponent",
   "resources": {
-    "hash": "sha256-LzvxnXYn9dYpBOwr4CQUPYfPwQ0PfSaXWNEe+5kEaQg=",
+    "hash": "sha256-Dp5TN0eIXF/Feh790v4sdKxcWgUPQeKRVU9+pmjzFmc=",
     "jsModuleNative": {
       "dotnet.native.8.0.8.dapwtwupbk.js": "sha256-juC5sA7gHTLXFEhAKgdM2/RavswpwCtDfjYGsAz2FXg="
     },
@@ -18,7 +18,7 @@
     },
     "assembly": {
       "ChatboxComponentLibrary.wasm": "sha256-oZV+KW2zQtj6NMgRtqsbbTThyF5dyKCeDf9i488H7qQ=",
-      "CommentboxComponentLibrary.wasm": "sha256-AK7CekuEUr6LdpflEkOMarpK4SYWxXWVOySzZ1+9sWA=",
+      "CommentboxComponentLibrary.wasm": "sha256-4U10ACDmh+9q1ookUxpkECXcCUpoAyaQBmiomN8j4So=",
       "CounterComponentLibrary.wasm": "sha256-xZSmm/cJ3E35v+QmVqiW75m76iNZGGvtZu5xTSk5dAI=",
       "Microsoft.AspNetCore.Components.CustomElements.wasm": "sha256-iyhkXIxy4FXIo5TgUAdY+iGcUtvonFhZUF8V8vhsYv0=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-2Q2V/YwCzG4vlyjH+dvE5gX5io5NmyC9w7k7g6JyiMg=",
@@ -48,7 +48,7 @@
       "System.Text.Encodings.Web.wasm": "sha256-MCv+5sGwYGikJ8D76raGF6L+02exyJcFgx2sVlUjmKk=",
       "System.Text.Json.wasm": "sha256-ssKxhpQUttYzKmcz3x97MWVU7Ih+A1pW08TZ1VU+HOk=",
       "System.Text.RegularExpressions.wasm": "sha256-8bujMNUMCuxn48zxE7AA6YYcbZJjv76LHEAtNjS6TuE=",
-      "TR.BlazorWasmWebComponent.wasm": "sha256-VEmPPRpUogzB3MMRemirpj+BlShD86RjNoAIPhvYU4w=",
+      "TR.BlazorWasmWebComponent.wasm": "sha256-jNfnkwdMBnsuRcEdbD97NT9cTijzC6Yvh6Qh+z8CGPg=",
       "WeatherComponentLibrary.wasm": "sha256-fISrooJ2NJ6IXPhs+8Py9llgnehTUB4cQNgaF2LnTAU="
     },
     "libraryInitializers": {

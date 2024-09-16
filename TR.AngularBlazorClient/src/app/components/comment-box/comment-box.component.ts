@@ -25,6 +25,7 @@ export class CommentBoxComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+    this.fetchAndUpdateComments();
     this.commentSubmittedSubscription = this.eventHandlingService.commentSubmitted$.subscribe(
       (comment: CommentEventDetail) => this.handleCommentSubmitted(comment)
     );
