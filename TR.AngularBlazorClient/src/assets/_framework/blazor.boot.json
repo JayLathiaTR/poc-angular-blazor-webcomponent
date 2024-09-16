@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TR.BlazorWasmWebComponent",
   "resources": {
-    "hash": "sha256-E3w5co8PuT70b4mVFyTSQ55YjjEKVbexJrCXqz7vN1M=",
+    "hash": "sha256-LzvxnXYn9dYpBOwr4CQUPYfPwQ0PfSaXWNEe+5kEaQg=",
     "jsModuleNative": {
       "dotnet.native.8.0.8.dapwtwupbk.js": "sha256-juC5sA7gHTLXFEhAKgdM2/RavswpwCtDfjYGsAz2FXg="
     },
@@ -17,9 +17,9 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "ChatboxComponentLibrary.wasm": "sha256-62G/uGpEzFy1r00LN+2G/Su8lBlJ6ac47AXtXqAIwBo=",
-      "CommentboxComponentLibrary.wasm": "sha256-i6OlP+SAkc+fVwZSUEWhyn816ddlNbWDooTlBrFKqm0=",
-      "CounterComponentLibrary.wasm": "sha256-+gFzcNRYDTe+Optj06QDaiv0oO0V1xlnxV2kNkrkT/g=",
+      "ChatboxComponentLibrary.wasm": "sha256-oZV+KW2zQtj6NMgRtqsbbTThyF5dyKCeDf9i488H7qQ=",
+      "CommentboxComponentLibrary.wasm": "sha256-AK7CekuEUr6LdpflEkOMarpK4SYWxXWVOySzZ1+9sWA=",
+      "CounterComponentLibrary.wasm": "sha256-xZSmm/cJ3E35v+QmVqiW75m76iNZGGvtZu5xTSk5dAI=",
       "Microsoft.AspNetCore.Components.CustomElements.wasm": "sha256-iyhkXIxy4FXIo5TgUAdY+iGcUtvonFhZUF8V8vhsYv0=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-2Q2V/YwCzG4vlyjH+dvE5gX5io5NmyC9w7k7g6JyiMg=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-7Hc1F4otq3jxxiMcrpa/D3baGw/KI4h1eJcz0f1+N6I=",
@@ -48,8 +48,8 @@
       "System.Text.Encodings.Web.wasm": "sha256-MCv+5sGwYGikJ8D76raGF6L+02exyJcFgx2sVlUjmKk=",
       "System.Text.Json.wasm": "sha256-ssKxhpQUttYzKmcz3x97MWVU7Ih+A1pW08TZ1VU+HOk=",
       "System.Text.RegularExpressions.wasm": "sha256-8bujMNUMCuxn48zxE7AA6YYcbZJjv76LHEAtNjS6TuE=",
-      "TR.BlazorWasmWebComponent.wasm": "sha256-0mrp2Z6cEJxlhYoI5rbh0rPcKSEvqYJPBHjvMvZcufQ=",
-      "WeatherComponentLibrary.wasm": "sha256-q1Ce+dNJp7FnKjQiUKYqsGB8V/XcvBsdP+51SsaGoRo="
+      "TR.BlazorWasmWebComponent.wasm": "sha256-VEmPPRpUogzB3MMRemirpj+BlShD86RjNoAIPhvYU4w=",
+      "WeatherComponentLibrary.wasm": "sha256-fISrooJ2NJ6IXPhs+8Py9llgnehTUB4cQNgaF2LnTAU="
     },
     "libraryInitializers": {
       "_content/Microsoft.AspNetCore.Components.CustomElements/Microsoft.AspNetCore.Components.CustomElements.lib.module.js": "sha256-wVE+oeSzTDXPHNmgbAGdEELwiM9BRtnzKONGp++HGB0="

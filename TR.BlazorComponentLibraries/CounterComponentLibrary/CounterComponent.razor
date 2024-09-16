@@ -10,7 +10,10 @@
 
 <div class="my-component">
     <p role="status">Current count: @currentCount</p>
-    <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+    <saf-button appearance="primary" @onclick="IncrementCount">
+        <saf-icon slot="start" icon-name="timer" appearance="solid"></saf-icon>
+        Saffron Count
+    </saf-button>
 </div>
 
 @code {

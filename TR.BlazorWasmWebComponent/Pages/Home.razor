@@ -1,7 +1,30 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<h1>Hello, Blazor User!</h1>
 
-<h1>Hello, world!</h1>
+Welcome to the new Saffronized Blazor Libraries app.
 
-Welcome to your new app.
+<style>
+    .my-component {
+        border: 2px dashed grey;
+        padding: 1em;
+        margin: 1em 0;
+    }
+</style>
+
+<div class="my-component">
+    <p role="status">Saffron Home Visits: @saffronVisit</p>
+    <saf-button appearance="secondary" @onclick="IncrementHomeVisitCount">
+        <saf-icon slot="start" icon-name="timer" appearance="light"></saf-icon>
+        Do Home Visit
+    </saf-button>
+</div>
+
+@code {
+    private int saffronVisit = 0;
+
+    private void IncrementHomeVisitCount()
+    {
+        saffronVisit++;
+    }
+}

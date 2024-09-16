@@ -47,9 +47,6 @@ export class CommentBoxComponent implements OnInit, OnDestroy {
       },
       error: (error) => {
         console.error('Error adding comment to server:', error);
-      },
-      complete: () => {
-        console.log('Any optional call to handle.');
       }
     });
   }

@@ -47,9 +47,6 @@ export class ChatboxComponent implements OnInit, OnDestroy {
       },
       error: (error) => {
         console.error('Error adding chat to server:', error);
-      },
-      complete: () => {
-        console.log('Any optional call to handle.');
       }
     });
   }
