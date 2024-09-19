@@ -3,12 +3,22 @@ This repository showcases the integration of a Blazor WebAssembly Library projec
 
 ---
 
+## Table of Contents
+- [Pre-requisites](#pre-requisites)
+- [Create New Blazor Library for a Specific Component](#create-new-blazor-library-for-a-specific-component)
+- [Integrate Library Component into TR.BlazorWasmWebComponent](#integrate-library-component-into-trblazorwasmwebcomponent)
+- [Integrate Angular App with Blazor Published Components](#integrate-angular-app-with-blazor-published-components)
+- [Using BlazorComponents with Attributes](#using-blazor-components-with-attributes)
+
 ## Pre-requisites
-* **VS Code** and **Visual Studio 2022** Latest version is installed.
-* Following latest versions are available:
-  * **Angular CLI**: `18.2.3`
-  * **Node**: `20.17.0`
-  * **Package Manager**: `npm 10.8.3`
+
+| Tool               | Version   |
+|--------------------|-----------|
+| VS Code            | Latest    |
+| Visual Studio 2022 | Latest    |
+| Angular CLI        | 18.2.3    |
+| Node               | 20.17.0   |
+| Package Manager    | npm 10.8.3|
 
 ---
 
