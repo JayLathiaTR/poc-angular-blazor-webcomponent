@@ -16,11 +16,20 @@
     <Reference Include="ChatboxComponentLibrary">
       <HintPath>..\TR.BlazorComponentLibraries\ChatboxComponentLibrary\bin\Release\net8.0\ChatboxComponentLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="ChildComponentLibrary">
+      <HintPath>..\TR.BlazorComponentLibraries\ChildComponentLibrary\ChildComponentLibrary\bin\Release\net8.0\ChildComponentLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="CommentboxComponentLibrary">
       <HintPath>..\TR.BlazorComponentLibraries\CommentboxComponentLibrary\bin\Release\net8.0\CommentboxComponentLibrary.dll</HintPath>
     </Reference>
     <Reference Include="CounterComponentLibrary">
       <HintPath>..\TR.BlazorComponentLibraries\CounterComponentLibrary\bin\Release\net8.0\CounterComponentLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ParentComponentLibrary">
+      <HintPath>..\TR.BlazorComponentLibraries\ParentComponentLibrary\ParentComponentLibrary\bin\Release\net8.0\ParentComponentLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="SharedModelLibrary">
+      <HintPath>..\TR.BlazorComponentLibraries\SharedModelLibrary\SharedModelLibrary\bin\Release\net8.0\SharedModelLibrary.dll</HintPath>
     </Reference>
     <Reference Include="WeatherComponentLibrary">
       <HintPath>..\TR.BlazorComponentLibraries\WeatherComponentLibrary\bin\Release\net8.0\WeatherComponentLibrary.dll</HintPath>

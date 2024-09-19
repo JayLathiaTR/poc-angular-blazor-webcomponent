@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TR.BlazorWasmWebComponent",
   "resources": {
-    "hash": "sha256-styZOYLRfr+WuZJovqbZ/rfiCLvigWW0bzqyR3rnaTY=",
+    "hash": "sha256-F0qRG4xN6FhHSqTsj8CyebM7OmrWbjppNoBLnsb4uyg=",
     "jsModuleNative": {
       "dotnet.native.8.0.8.dapwtwupbk.js": "sha256-juC5sA7gHTLXFEhAKgdM2/RavswpwCtDfjYGsAz2FXg="
     },
@@ -18,6 +18,7 @@
     },
     "assembly": {
       "ChatboxComponentLibrary.wasm": "sha256-oZV+KW2zQtj6NMgRtqsbbTThyF5dyKCeDf9i488H7qQ=",
+      "ChildComponentLibrary.wasm": "sha256-g/AT/AWHFDD7RbtbpVN6nxiL+MR/VaKfMT+KTEwUO28=",
       "CommentboxComponentLibrary.wasm": "sha256-3VmAUtLqKH2R6xfQr4rjgD1imMs/nqs2aMZqiGo3s/k=",
       "CounterComponentLibrary.wasm": "sha256-NsTaOYy6Qb9Nou3tpKqwTtKbnVCHl3u2rZKrWvuPoH8=",
       "Microsoft.AspNetCore.Components.CustomElements.wasm": "sha256-iyhkXIxy4FXIo5TgUAdY+iGcUtvonFhZUF8V8vhsYv0=",
@@ -35,6 +36,8 @@
       "Microsoft.Extensions.Primitives.wasm": "sha256-6187ynEahDlSLMBvD4vAmiLpZ3clRb5xu6rM7O8AxNo=",
       "Microsoft.JSInterop.wasm": "sha256-sqmN82WgCC58zlo1LeCRD1b6JrRExeAzQp2f/cLED5M=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-sLSiCKh0RQEV/2cl05tr7wOLWzExQfPZovvpqYLJduQ=",
+      "ParentComponentLibrary.wasm": "sha256-8AfUfgnsKWq5RR+PWA091WpVhutlVC4YwQSYK/v64ko=",
+      "SharedModelLibrary.wasm": "sha256-Xu6ufy06wu/PFXZUcVvm6g4WUDkLLKW+WadUXcCGoTY=",
       "System.Collections.Concurrent.wasm": "sha256-NVEciweq4C45AijA3PT3fpwPDZ/4qnRVDko7sjqMGcc=",
       "System.Collections.wasm": "sha256-HH8MCUsNCsAmgzknGRto1vRmwLyl2B4boVrF84car48=",
       "System.ComponentModel.wasm": "sha256-GPAg/lqvtlGqfal3j6EPgQ+6mqlusQ30qCeS8LYv8ws=",
@@ -48,7 +51,7 @@
       "System.Text.Encodings.Web.wasm": "sha256-MCv+5sGwYGikJ8D76raGF6L+02exyJcFgx2sVlUjmKk=",
       "System.Text.Json.wasm": "sha256-ssKxhpQUttYzKmcz3x97MWVU7Ih+A1pW08TZ1VU+HOk=",
       "System.Text.RegularExpressions.wasm": "sha256-8bujMNUMCuxn48zxE7AA6YYcbZJjv76LHEAtNjS6TuE=",
-      "TR.BlazorWasmWebComponent.wasm": "sha256-tSWhPdX3IcEDJLGBGBBZfvwG5N1Z6u7LLPsmky1G0UU=",
+      "TR.BlazorWasmWebComponent.wasm": "sha256-uwv7Ru2Byg0PiWQcitIdaLFr45E97/nKP4uFDZz65PA=",
       "WeatherComponentLibrary.wasm": "sha256-fISrooJ2NJ6IXPhs+8Py9llgnehTUB4cQNgaF2LnTAU="
     },
     "libraryInitializers": {

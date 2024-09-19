@@ -1,0 +1,22 @@
+﻿@using SharedModelLibrary
+
+@if (Item != null)
+{
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Child Page: @Item.Name</h5>
+                <p class="card-text">@Item.Description</p>
+            </div>
+        </div>
+}
+else
+{
+        <div class="alert alert-info mt-3">
+            Child Page message: Please select an item to see the details.
+        </div>
+}
+
+@code {
+    [Parameter]
+    public Item Item { get; set; }
+}

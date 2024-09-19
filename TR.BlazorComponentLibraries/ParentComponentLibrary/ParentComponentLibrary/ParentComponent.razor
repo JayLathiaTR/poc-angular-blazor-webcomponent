@@ -1,0 +1,42 @@
+﻿@page "/parent"
+@using SharedModelLibrary
+@using ChildComponentLibrary
+
+<div class="container">
+    <h4>Parent Page</h4>
+    <div class="list-group">
+        @foreach (var item in items)
+        {
+            <button class="@GetItemClass(item)" @onclick="() => SelectItem(item)">
+                @item.Name
+            </button>
+        }
+    </div>
+
+    <ChildComponent Item="selectedItem" />
+</div>
+
+@code {
+    private List<Item> items;
+    private Item selectedItem;
+
+    protected override void OnInitialized()
+    {
+        items = new List<Item>
+        {
+            new Item { Id = 1, Name = "Item 1", Description = "This is Item 1" },
+            new Item { Id = 2, Name = "Item 2", Description = "This is Item 2" },
+            new Item { Id = 3, Name = "Item 3", Description = "This is Item 3" }
+        };
+    }
+
+    private void SelectItem(Item item)
+    {
+        selectedItem = item;
+    }
+
+    private string GetItemClass(Item item)
+    {
+        return item == selectedItem ? "list-group-item list-group-item-action active" : "list-group-item list-group-item-action";
+    }
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.35201.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedModelLibrary", "SharedModelLibrary\SharedModelLibrary.csproj", "{B5C3D9A1-EF85-4920-BC2F-BEC7E3CCAD82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5C3D9A1-EF85-4920-BC2F-BEC7E3CCAD82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C3D9A1-EF85-4920-BC2F-BEC7E3CCAD82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C3D9A1-EF85-4920-BC2F-BEC7E3CCAD82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C3D9A1-EF85-4920-BC2F-BEC7E3CCAD82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {931F435C-65F9-4A79-92D9-06D6194D3B74}
+	EndGlobalSection
+EndGlobal
