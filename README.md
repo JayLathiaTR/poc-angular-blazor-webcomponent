@@ -9,6 +9,7 @@ This repository showcases the integration of a Blazor WebAssembly Library projec
 - [Integrate Library Component into TR.BlazorWasmWebComponent](#integrate-library-component-into-trblazorwasmwebcomponent)
 - [Integrate Angular App with Blazor Published Components](#integrate-angular-app-with-blazor-published-components)
 - [Using BlazorComponents with Attributes](#using-blazorcomponents-with-attributes)
+- [Parent/Child component approach](#parent/child-component-approach)
 
 ## Pre-requisites
 
@@ -106,3 +107,13 @@ This repository showcases the integration of a Blazor WebAssembly Library projec
 **Note:**
 - For an attribute binding directly to HTML, use kebab casing (e.g., Blazor `StepCount` becomes `step-count` in Angular).
 - For a complex object binding via JS query selector, use camel casing (e.g., Blazor `SetDetails` becomes `setDetails` in Angular).
+
+---
+
+## Parent/Child component approach
+1. **SharedModelLibrary**: Class library containing the models & items which are shared between `ParentComponentLibrary` and `ChildComponentLibrary`.
+2. **ParentComponentLibrary**: References `SharedModelLibrary` & `ChildComponentLibrary`.
+3. **ChildComponentLibrary**: References `SharedModelLibrary`.
+4. **Main Blazor WASM**: References all three libraries.
+5. **CustomElementRegistration**: Custom element registration of `ParentComponentLibrary` is required for Angular consumption. `ChildComponentLibrary` registration is optional, if it is not directly consumed in Angular.
+   ![image](https://github.com/user-attachments/assets/ef1ccd65-ed8d-40e8-8790-755313a9d0b8)
