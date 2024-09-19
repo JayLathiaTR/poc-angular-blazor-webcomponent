@@ -72,5 +72,3 @@ This repository showcases the integration of a BlazorWebAssembly Library project
 * **Note:**
   * For an attribute binding directly to html, use kebab casing. Ex: If the property in Blazor is: **StepCount**, then use **step-count** during attribute binding in angular html.
   * For a complex object binding via JS query selector, use the camel casing. Ex: If the object in the Blazor is: **SetDetails**, then use **setDetails** during angular JS binding.
-
-
