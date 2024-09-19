@@ -8,7 +8,7 @@ This repository showcases the integration of a Blazor WebAssembly Library projec
 - [Create New Blazor Library for a Specific Component](#create-new-blazor-library-for-a-specific-component)
 - [Integrate Library Component into TR.BlazorWasmWebComponent](#integrate-library-component-into-trblazorwasmwebcomponent)
 - [Integrate Angular App with Blazor Published Components](#integrate-angular-app-with-blazor-published-components)
-- [Using BlazorComponents with Attributes](#using-blazor-components-with-attributes)
+- [Using BlazorComponents with Attributes](#using-blazorcomponents-with-attributes)
 
 ## Pre-requisites
 
