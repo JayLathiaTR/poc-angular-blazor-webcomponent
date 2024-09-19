@@ -9,7 +9,7 @@ This repository showcases the integration of a Blazor WebAssembly Library projec
 - [Integrate Library Component into TR.BlazorWasmWebComponent](#integrate-library-component-into-trblazorwasmwebcomponent)
 - [Integrate Angular App with Blazor Published Components](#integrate-angular-app-with-blazor-published-components)
 - [Using BlazorComponents with Attributes](#using-blazorcomponents-with-attributes)
-- [Parent/Child component approach](#parent/child-component-approach)
+- [Parent/Child component approach](#parent-child-component-approach)
 
 ## Pre-requisites
 
