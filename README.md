@@ -61,3 +61,16 @@ This repository showcases the integration of a BlazorWebAssembly Library project
 * ![image](https://github.com/user-attachments/assets/3d124759-943b-4706-82e8-a544c03515a2)
 * You can navigate to your angular route for your Blazor component to see it in action.
 * ![image](https://github.com/user-attachments/assets/68d77b1d-1bfe-4696-8dc0-c822516057d2)
+
+# Using BlazorComponents with Attributes
+* To use custom components with some attributes to be passed from Angular dynamically, follow these steps
+* Create a Razor page with a property or a complex object decorated with [Parameter] to it
+* ![image](https://github.com/user-attachments/assets/9a944e97-504a-495e-be0c-2f3d6b5e5c6f)
+* From angular, pass the attributes cirectly bound to component (if it is just a single property) or bind the complex object with the help of JS query selector as follows
+* ![image](https://github.com/user-attachments/assets/c0920dee-76e5-47d6-8480-9afb2d7ddb6f)
+* ![image](https://github.com/user-attachments/assets/ca8d5647-1668-48f3-8287-7dfc3b845fec)
+* **Note:**
+  * For an attribute binding directly to html, use kebab casing. Ex: If the property in Blazor is: **StepCount**, then use **step-count** during attribute binding in angular html.
+  * For a complex object binding via JS query selector, use the camel casing. Ex: If the object in the Blazor is: **SetDetails**, then use **setDetails** during angular JS binding.
+
+
