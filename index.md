@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 ## Table of Contents
 - [Pre-requisites](#pre-requisites)
 - [Create New Blazor Library for a Specific Component](#create-new-blazor-library-for-a-specific-component)
