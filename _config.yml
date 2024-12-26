@@ -8,4 +8,4 @@ remote_theme: pages-themes/cayman@v0.2.0
 # - jekyll-remote-theme # add this line to the plugins list if you already have one
 
 title: Angular X Blazor WASM
-# description: Static page hosting via GitHub Pages
+description: Static page hosting via GitHub Pages
