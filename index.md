@@ -20,8 +20,6 @@ layout: default
 | Node               | 20.17.0   |
 | Package Manager    | npm 10.8.3|
 
----
-
 ## Create new Blazor Library for a specific component
 1. Navigate to the TR.BlazorComponentLibraries directory in the command line and run the following command:
    * `dotnet new razorclasslib -o CommentboxComponentLibrary`
@@ -37,8 +35,6 @@ layout: default
 
 6. This will generate the DLL and other binaries at `\bin\Release\net8.0`.
    ![image](https://github.com/user-attachments/assets/484677d0-f1c6-43d5-8a1c-8f61f40816be)
-
----
 
 ## Integrate Library component into TR.BlazorWasmWebComponent
 1. Open the `TR.BlazorWasmWebComponent` solution in **Visual Studio 2022**.
@@ -71,8 +67,6 @@ layout: default
 11. After publishing, go to the published location and navigate to the `wwwroot` directory. Copy the folders `_content` and `_framework`.
     ![image](https://github.com/user-attachments/assets/55f4b75b-051d-45ec-a336-f9aef987547e)
 
----
-
 ## Integrate Angular App with Blazor published components
 1. Navigate to the `src/assets` directory of the `TR.AngularBlazorClient` project and paste the copied Blazor published folders.
    ![image](https://github.com/user-attachments/assets/ac5544fa-ca64-4860-a770-cab51906addd)
@@ -93,8 +87,6 @@ layout: default
 5. Navigate to your Angular route for your Blazor component to see it in action.
    ![image](https://github.com/user-attachments/assets/68d77b1d-1bfe-4696-8dc0-c822516057d2)
 
----
-
 ## Using BlazorComponents with Attributes
 1. Create a Razor page with a property or a complex object decorated with `[Parameter]`.
    ![image](https://github.com/user-attachments/assets/9a944e97-504a-495e-be0c-2f3d6b5e5c6f)
@@ -106,8 +98,6 @@ layout: default
 **Note:**
 - For an attribute binding directly to HTML, use kebab casing (e.g., Blazor `StepCount` becomes `step-count` in Angular).
 - For a complex object binding via JS query selector, use camel casing (e.g., Blazor `SetDetails` becomes `setDetails` in Angular).
-
----
 
 ## Parent-Child component approach
 1. **SharedModelLibrary**: Class library containing the models & items which are shared between `ParentComponentLibrary` and `ChildComponentLibrary`.
